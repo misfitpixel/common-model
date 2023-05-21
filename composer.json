@@ -1,0 +1,36 @@
+{
+    "name": "misfitpixel/common-model",
+    "description": "Common entities and traits used in microservice data models",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Brandin Chiu",
+            "email": "brandin@misfitpixel.io"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4",
+        "symfony/framework-bundle": "^5.4",
+        "symfony/orm-pack": "^2.3",
+        "misfitpixel/common-exceptions": "dev-main"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/misfitpixel/common-exceptions.git"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "autoload": {
+        "psr-4": { "MisfitPixel\\Common\\Model\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
