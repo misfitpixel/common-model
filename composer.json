@@ -14,7 +14,8 @@
         "php": ">=7.4",
         "symfony/framework-bundle": "^5.4",
         "symfony/orm-pack": "^2.3",
-        "misfitpixel/common-exceptions": "dev-main"
+        "misfitpixel/common-exceptions": "dev-main",
+        "doctrine/doctrine-bundle": "2.6.4"
     },
     "repositories": [
         {
