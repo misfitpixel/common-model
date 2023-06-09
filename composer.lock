@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ccf7345b7b71b722c53159f1766ab4c",
+    "content-hash": "ff0f46d9a08b11fbf0b76d8658269202",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1517,17 +1517,17 @@
             "time": "2022-11-21T01:32:31+00:00"
         },
         {
-            "name": "misfitpixel/common-exceptions",
+            "name": "misfitpixel/common-foundation",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/misfitpixel/common-exceptions.git",
-                "reference": "8ace179b62d453a52a9d5a9fceeba7cf9bf51eb5"
+                "url": "https://github.com/misfitpixel/common-foundation.git",
+                "reference": "55519e76381170535b299e8d4db66ac120eacc20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misfitpixel/common-exceptions/zipball/8ace179b62d453a52a9d5a9fceeba7cf9bf51eb5",
-                "reference": "8ace179b62d453a52a9d5a9fceeba7cf9bf51eb5",
+                "url": "https://api.github.com/repos/misfitpixel/common-foundation/zipball/55519e76381170535b299e8d4db66ac120eacc20",
+                "reference": "55519e76381170535b299e8d4db66ac120eacc20",
                 "shasum": ""
             },
             "require": {
@@ -1538,7 +1538,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Misfitpixel\\Common\\Exception\\": ""
+                    "MisfitPixel\\Common\\": ""
                 },
                 "exclude-from-classmap": [
                     "/Tests/"
@@ -1555,9 +1555,9 @@
             ],
             "description": "Exception handler and shared exceptions",
             "support": {
-                "source": "https://github.com/misfitpixel/common-exceptions/tree/main"
+                "source": "https://github.com/misfitpixel/common-foundation/tree/main"
             },
-            "time": "2023-05-21T20:34:49+00:00"
+            "time": "2023-06-09T00:31:30+00:00"
         },
         {
             "name": "psr/cache",
@@ -4226,7 +4226,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "misfitpixel/common-exceptions": 20
+        "misfitpixel/common-foundation": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
