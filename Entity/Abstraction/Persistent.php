@@ -66,7 +66,7 @@ trait Persistent
             $dispatcher->dispatch($event, sprintf('api.%s.after_%s', strtolower($this->getEntityName()), $action));
 
         } catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e) {
-            throw new Exception\NonUniqueEntityException(null, self::class);
+            throw new Exception\NonUniqueEntityException(null, static::class);
 
         } catch(\Doctrine\DBAL\Exception\NotNullConstraintViolationException $e) {
             throw new Exception\DbException($e->getMessage());
@@ -199,6 +199,6 @@ trait Persistent
      */
     protected function getEntityName(): string
     {
-        return str_replace('App\Entity\\', '', self::class);
+        return str_replace('App\Entity\\', '', static::class);
     }
 }
