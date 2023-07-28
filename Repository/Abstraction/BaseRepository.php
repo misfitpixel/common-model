@@ -6,6 +6,8 @@ namespace MisfitPixel\Common\Model\Repository\Abstraction;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use MisfitPixel\Common\Exception;
+use MisfitPixel\Common\Model\Entity\Abstraction\Statused;
+use MisfitPixel\Common\Model\Entity\Status;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -116,6 +118,31 @@ abstract class BaseRepository extends ServiceEntityRepository
     public function findAll(): array
     {
         return parent::findBy([], null, $this->getLimit(), $this->getOffset());
+    }
+
+    /**
+     * @param $id
+     * @param $lockMode
+     * @param $lockVersion
+     * @return object|float|int|mixed|string|null
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \ReflectionException
+     */
+    public function find($id, $lockMode = null, $lockVersion = null): ?object
+    {
+        $class = new \ReflectionClass($this->getEntityClassName());
+
+        $qb = $this->createQueryBuilder('e');
+        $qb->where('e.id = :id');
+
+        if(array_search(Statused::class, $class->getTraitNames())) {
+            $qb->andWhere($qb->expr()->not($qb->expr()->eq('e.statusId', ':status_id')));
+            $qb->setParameter('status_id', Status::DELETED);
+        }
+
+        $qb->setParameter('id', $id);
+
+        return $qb->getQuery()->getOneOrNullResult();
     }
 
     /**
